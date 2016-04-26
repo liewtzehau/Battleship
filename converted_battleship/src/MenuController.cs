@@ -40,6 +40,8 @@ static class MenuController
 		}
 
 	};
+
+    private static string _aiLevelMessage= "EASY";
 	private const int MENU_TOP = 575;
 	private const int MENU_LEFT = 30;
 	private const int MENU_GAP = 0;
@@ -139,10 +141,10 @@ static class MenuController
 	/// </summary>
 	public static void DrawMainMenu()
 	{
-		//Clears the Screen to Black
-		//SwinGame.DrawText("Main Menu", Color.White, GameFont("ArialLarge"), 50, 50)
-
-		DrawButtons(MAIN_MENU);
+        //Clears the Screen to Black
+        //SwinGame.DrawText("Main Menu", Color.White, GameFont("ArialLarge"), 50, 50)
+        SwinGame.DrawTextLines("Difficulty: " + _aiLevelMessage, Color.Blue, Color.Transparent, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, 310, 493, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
+        DrawButtons(MAIN_MENU);
 	}
 
 	/// <summary>
@@ -151,9 +153,8 @@ static class MenuController
 	public static void DrawGameMenu()
 	{
 		//Clears the Screen to Black
-		SwinGame.DrawText("Pause",Color.White, GameResources.GameFont("ArialLarge"),50,50);
-
-		DrawButtons(GAME_MENU);
+		SwinGame.DrawText("Defficulty: ",Color.White, GameResources.GameFont("ArialLarge"),50,50);
+        DrawButtons(GAME_MENU);
 	}
 
 	/// <summary>
@@ -165,9 +166,7 @@ static class MenuController
 	public static void DrawSettings()
 	{
 		//Clears the Screen to Black
-		//SwinGame.DrawText("Settings", Color.White, GameFont("ArialLarge"), 50, 50)
-
-		DrawButtons(MAIN_MENU);
+        DrawButtons(MAIN_MENU);
 		DrawButtons(SETUP_MENU, 1, 1);
 	}
 
@@ -200,7 +199,6 @@ static class MenuController
 		for (i = 0; i <= _menuStructure[menu].Length - 1; i++) {
 			int btnLeft = 0;
 			btnLeft = MENU_LEFT + BUTTON_SEP * (i + xOffset);
-			//SwinGame.FillRectangle(Color.White, btnLeft, btnTop, BUTTON_WIDTH, BUTTON_HEIGHT)
 			SwinGame.DrawTextLines(_menuStructure[menu][i], MENU_COLOR, Color.Black, GameResources.GameFont("Menu"), FontAlignment.AlignCenter, btnLeft + TEXT_OFFSET, btnTop + TEXT_OFFSET, BUTTON_WIDTH, BUTTON_HEIGHT);
 
 			if (SwinGame.MouseDown(MouseButton.LeftButton) & IsMouseOverMenu(i, level, xOffset)) {
@@ -254,27 +252,29 @@ static class MenuController
 		}
 	}
 
-	/// <summary>
-	/// The main menu was clicked, perform the button's action.
-	/// </summary>
-	/// <param name="button">the button pressed</param>
-	private static void PerformMainMenuAction(int button)
-	{
-		switch (button) {
-			case MAIN_MENU_PLAY_BUTTON:
-				GameController.StartGame();
-				break;
-			case MAIN_MENU_SETUP_BUTTON:
-				GameController.AddNewState(GameState.AlteringSettings);
-				break;
-			case MAIN_MENU_TOP_SCORES_BUTTON:
-				GameController.AddNewState(GameState.ViewingHighScores);
-				break;
-			case MAIN_MENU_QUIT_BUTTON:
-				GameController.EndCurrentState();
-				break;
-		}
-	}
+    /// <summary>
+    /// The main menu was clicked, perform the button's action.
+    /// </summary>
+    /// <param name="button">the button pressed</param>
+    private static void PerformMainMenuAction(int button)
+    {
+
+        switch (button)
+        {
+            case MAIN_MENU_PLAY_BUTTON:
+                GameController.StartGame();
+                break;
+            case MAIN_MENU_SETUP_BUTTON:
+                GameController.AddNewState(GameState.AlteringSettings);
+                break;
+            case MAIN_MENU_TOP_SCORES_BUTTON:
+                GameController.AddNewState(GameState.ViewingHighScores);
+                break;
+            case MAIN_MENU_QUIT_BUTTON:
+                GameController.EndCurrentState();
+                break;
+        }
+    }
 
 	/// <summary>
 	/// The setup menu was clicked, perform the button's action.
@@ -282,19 +282,23 @@ static class MenuController
 	/// <param name="button">the button pressed</param>
 	private static void PerformSetupMenuAction(int button)
 	{
-		switch (button) {
-			case SETUP_MENU_EASY_BUTTON:
-				GameController.SetDifficulty(AIOption.Hard);
-				break;
-			case SETUP_MENU_MEDIUM_BUTTON:
-				GameController.SetDifficulty(AIOption.Hard);
-				break;
-			case SETUP_MENU_HARD_BUTTON:
-				GameController.SetDifficulty(AIOption.Hard);
-				break;
-		}
-		//Always end state - handles exit button as well
-		GameController.EndCurrentState();
+        if (button == SETUP_MENU_EASY_BUTTON)
+        {
+            GameController.SetDifficulty(AIOption.Easy);
+            _aiLevelMessage = "Easy";            
+        }
+        else if (button == SETUP_MENU_MEDIUM_BUTTON)
+        {
+            GameController.SetDifficulty(AIOption.Medium);
+            _aiLevelMessage = "Medium";
+        }
+        else if (button == SETUP_MENU_HARD_BUTTON)
+        {
+            GameController.SetDifficulty(AIOption.Hard);
+            _aiLevelMessage = "Hard";
+        }
+        //Always end state - handles exit button as well
+        GameController.EndCurrentState();
 	}
 
 	/// <summary>
