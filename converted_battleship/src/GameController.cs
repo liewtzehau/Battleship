@@ -78,13 +78,13 @@ public static class GameController
 		switch (_aiSetting) {
 			case AIOption.Medium:
 				_ai = new AIMediumPlayer(_theGame);
-				break;
+                break;
 			case AIOption.Hard:
 				_ai = new AIHardPlayer(_theGame);
-				break;
+                break;
 			default:
 				_ai = new AIHardPlayer(_theGame);
-				break;
+                break;
 		}
 
 		_human = new Player(_theGame);
@@ -151,7 +151,8 @@ public static class GameController
 	/// </remarks>
 	private static void AttackCompleted(object sender, AttackResult result)
 	{
-		bool isHuman = false;
+        
+        bool isHuman = false;
 		isHuman = object.ReferenceEquals(_theGame.Player, HumanPlayer);
 
 		if (isHuman) {
@@ -159,8 +160,9 @@ public static class GameController
 		} else {
 			UtilityFunctions.Message = "The AI " + result.ToString();
 		}
+       
 
-		switch (result.Value) {
+        switch (result.Value) {
 			case ResultOfAttack.Destroyed:
 				PlayHitSequence(result.Row, result.Column, isHuman);
 			Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
@@ -282,7 +284,7 @@ public static class GameController
 				break;
 			case GameState.AlteringSettings:
 				MenuController.HandleSetupMenuInput();
-				break;
+                break;
 			case GameState.Deploying:
 				DeploymentController.HandleDeploymentInput();
 				break;
@@ -347,8 +349,8 @@ public static class GameController
 	public static void AddNewState(GameState state)
 	{
 		_state.Push(state);
-		UtilityFunctions.Message = "";
-	}
+        UtilityFunctions.Message = "Easy";
+    }
 
 	/// <summary>
 	/// End the current state and add in the new state.
