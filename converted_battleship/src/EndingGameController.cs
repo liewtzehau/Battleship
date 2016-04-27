@@ -29,7 +29,7 @@ static class EndingGameController
 			SwinGame.DrawTextLines("-- WINNER --", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 200, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
 			SwinGame.DrawTextLines("R-click to quit game", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 300, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
 		}
-		}
+		
 	}
 
 	/// <summary>
