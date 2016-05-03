@@ -5,12 +5,12 @@
       <File FileName="src\GameState.cs" Line="1" Column="1" />
       <File FileName="src\Model\AIPlayer.cs" Line="1" Column="1" />
       <File FileName="src\Model\AIHardPlayer.cs" Line="1" Column="1" />
-      <File FileName="src\GameResources.cs" Line="51" Column="13" />
+      <File FileName="src\GameResources.cs" Line="1" Column="1" />
       <File FileName="src\EndingGameController.cs" Line="1" Column="1" />
       <File FileName="src\HighScoreController.cs" Line="1" Column="1" />
       <File FileName="src\GameLogic.cs" Line="1" Column="1" />
-      <File FileName="src\DiscoveryController.cs" Line="80" Column="72" />
-      <File FileName="src\MenuController.cs" Line="154" Column="86" />
+      <File FileName="src\DiscoveryController.cs" Line="1" Column="1" />
+      <File FileName="src\MenuController.cs" Line="156" Column="27" />
       <File FileName="src\UtilityFunctions.cs" Line="1" Column="1" />
       <File FileName="src\Model\AIOption.cs" Line="1" Column="1" />
       <File FileName="src\Model\AttackResult.cs" Line="1" Column="1" />
@@ -18,7 +18,6 @@
       <File FileName="src\Model\Direction.cs" Line="1" Column="1" />
       <File FileName="src\Model\ISeaGrid.cs" Line="1" Column="1" />
       <File FileName="src\Model\Ship.cs" Line="1" Column="1" />
-      <File FileName="c:\Users\User\Documents\DP1\Tutorials\T6\converted_battleship\src\GameController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

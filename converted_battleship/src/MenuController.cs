@@ -153,7 +153,7 @@ static class MenuController
 	public static void DrawGameMenu()
 	{
 		//Clears the Screen to Black
-		SwinGame.DrawText("Defficulty: ",Color.White, GameResources.GameFont("ArialLarge"),50,50);
+		SwinGame.DrawText("Pause",Color.White, GameResources.GameFont("ArialLarge"),50,50);
         DrawButtons(GAME_MENU);
 	}
 
