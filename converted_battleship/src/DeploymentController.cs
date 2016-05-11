@@ -37,7 +37,8 @@ static class DeploymentController
 	private const int TEXT_OFFSET = 5;
 	private static Direction _currentDirection = Direction.UpDown;
 
-
+	private static int row2 = 0;
+	private static int col2 = 0;
 
 	private static ShipName _selectedShip = ShipName.Tug;
 	/// <summary>
@@ -56,9 +57,11 @@ static class DeploymentController
 
 		if (SwinGame.KeyTyped(KeyCode.vk_UP) | SwinGame.KeyTyped(KeyCode.vk_DOWN)) {
 			_currentDirection = Direction.UpDown;
+			RotateShip ();
 		}
 		if (SwinGame.KeyTyped(KeyCode.vk_LEFT) | SwinGame.KeyTyped(KeyCode.vk_RIGHT)) {
 			_currentDirection = Direction.LeftRight;
+			RotateShip ();
 		}
 
 		if (SwinGame.KeyTyped(KeyCode.vk_r)) {
@@ -78,8 +81,10 @@ static class DeploymentController
 				GameController.EndDeployment();
 			} else if (UtilityFunctions.IsMouseInRectangle(UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
 				_currentDirection = Direction.UpDown;
+				RotateShip ();
 			} else if (UtilityFunctions.IsMouseInRectangle(LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
 				_currentDirection = Direction.LeftRight;
+				RotateShip ();
 			} else if (UtilityFunctions.IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
 				GameController.HumanPlayer.RandomizeDeployment();
 			}
@@ -115,7 +120,18 @@ static class DeploymentController
 					Audio.PlaySoundEffect(GameResources.GameSound("Error"));
 					UtilityFunctions.Message = ex.Message;
 				}
+				row2 = row;
+				col2 = col;
 			}
+		}
+	}
+
+	public static void RotateShip(){
+		try {
+			GameController.HumanPlayer.PlayerGrid.MoveShip(row2, col2, _selectedShip, _currentDirection);
+		} catch (Exception ex) {
+			Audio.PlaySoundEffect(GameResources.GameSound("Error"));
+			UtilityFunctions.Message = ex.Message;
 		}
 	}
 
