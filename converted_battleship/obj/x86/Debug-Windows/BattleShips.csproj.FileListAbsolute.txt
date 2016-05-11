@@ -57,3 +57,5 @@ C:\Users\Mill3r519\Documents\GitHub\Battleship\converted_battleship\bin\Debug\Re
 C:\Users\Mill3r519\Documents\GitHub\Battleship\converted_battleship\bin\Debug\BattleShips.exe
 C:\Users\Mill3r519\Documents\GitHub\Battleship\converted_battleship\bin\Debug\SwinGame.dll
 C:\Users\Mill3r519\Documents\GitHub\Battleship\converted_battleship\obj\x86\Debug-Windows\BattleShips.exe
+C:\Users\Mill3r519\Documents\GitHub\Battleship\converted_battleship\obj\x86\Debug-Windows\BattleShips.csprojResolveAssemblyReference.cache
+C:\Users\Mill3r519\Documents\GitHub\Battleship3\converted_battleship\obj\x86\Debug-Windows\BattleShips.exe
