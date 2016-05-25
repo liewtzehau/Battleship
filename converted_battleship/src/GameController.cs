@@ -223,6 +223,17 @@ public static class GameController
 	/// </remarks>
 	public static void Attack(int row, int col)
 	{
+
+		if (row == -1)
+		{
+			if (col == 0 || col == 1)
+			{
+				GameController.AddNewState (GameState.ViewingGameMenu);
+				return;
+			}
+			return;
+		}
+
 		AttackResult result = default(AttackResult);
 		result = _theGame.Shoot(row, col);
 		CheckAttackResult(result);

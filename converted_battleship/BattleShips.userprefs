@@ -1,6 +1,6 @@
 ﻿<Properties StartupItem="BattleShips.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Mac|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\MenuController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Windows|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BattleshipUnitTesting.cs">
     <Files>
       <File FileName="src\GameState.cs" Line="1" Column="1" />
       <File FileName="src\Model\AIPlayer.cs" Line="1" Column="1" />
@@ -10,7 +10,7 @@
       <File FileName="src\HighScoreController.cs" Line="1" Column="1" />
       <File FileName="src\GameLogic.cs" Line="1" Column="1" />
       <File FileName="src\DiscoveryController.cs" Line="1" Column="1" />
-      <File FileName="src\MenuController.cs" Line="156" Column="27" />
+      <File FileName="src\MenuController.cs" Line="152" Column="16" />
       <File FileName="src\UtilityFunctions.cs" Line="1" Column="1" />
       <File FileName="src\Model\AIOption.cs" Line="1" Column="1" />
       <File FileName="src\Model\AttackResult.cs" Line="1" Column="1" />
@@ -18,7 +18,15 @@
       <File FileName="src\Model\Direction.cs" Line="1" Column="1" />
       <File FileName="src\Model\ISeaGrid.cs" Line="1" Column="1" />
       <File FileName="src\Model\Ship.cs" Line="1" Column="1" />
+      <File FileName="BattleshipUnitTesting.cs" Line="62" Column="4" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="BattleShips" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
