@@ -13,7 +13,7 @@ using SwinGameSDK;
 
 static class EndingGameController
 {
-
+    private static string rightclick = "Before end game";
 	/// <summary>
 	/// Draw the end of the game screen, shows the win/lose state
 	/// </summary>
@@ -49,8 +49,19 @@ static class EndingGameController
 		if (SwinGame.MouseClicked(MouseButton.RightButton) || SwinGame.KeyTyped(KeyCode.vk_RETURN) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
 			HighScoreController.ReadHighScore(GameController.HumanPlayer.Score);
 			GameController.EndCurrentState();
+            Perform_Right_Click_Function();
 		}
 	}
+
+    public static void Perform_Right_Click_Function()
+    {
+        rightclick = "After Click Quit Game";
+    }
+
+    public static string Return_After_Click
+    {
+        get { return rightclick; }
+    }
 
 }
 
